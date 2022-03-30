@@ -1,6 +1,6 @@
 # FormularioHuevo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+Este proyecto será un formulario con una lista de elementos en los que se añadirán diferentes tipos de huevos y de qué gallinas provienen. Incluyendo la granja, el tipo de gallina y demás datos de interés de dichos huevos.
 
 ## Development server
 
