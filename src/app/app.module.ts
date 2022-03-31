@@ -16,6 +16,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { AutosizeModule } from 'ngx-autosize';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, HuevoDialogComponent],
   imports: [
@@ -33,6 +35,9 @@ import { AutosizeModule } from 'ngx-autosize';
     MatNativeDateModule,
     MatRadioModule,
     AutosizeModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
