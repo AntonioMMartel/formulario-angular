@@ -1,9 +1,22 @@
 {
-  "huevosList": [
+  "huevos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "nombreHuevo": "AAAAAAA",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Orgulloso alumno de la ulpgc",
+      "bicepsHuevo": 2,
+      "fechaHuevo": "2022-04-12T23:00:00.000Z",
+      "comentariosHuevo": "aaa",
+      "id": 1
+    },
+    {
+      "nombreHuevo": "2222",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Orgulloso alumno de la ulpgc",
+      "bicepsHuevo": 222,
+      "fechaHuevo": "2001-01-10T00:00:00.000Z",
+      "comentariosHuevo": "ESTE SIIII",
+      "id": 2
     }
   ]
 }

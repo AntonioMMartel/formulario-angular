@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ApiHuevosService } from '../services/api-huevos.service';
 @Component({
   selector: 'app-huevo-dialog',
   templateUrl: './huevo-dialog.component.html',
@@ -18,7 +19,10 @@ export class HuevoDialogComponent {
 
   huevoForm!: FormGroup;
 
-  constructor(private FormBuilder: FormBuilder) {
+  constructor(
+    private FormBuilder: FormBuilder,
+    private apiHuevos: ApiHuevosService
+  ) {
     this.huevoForm = this.FormBuilder.group({
       nombreHuevo: ['', Validators.required],
       formaHuevo: ['', Validators.required],
@@ -35,5 +39,15 @@ export class HuevoDialogComponent {
 
   guardaHuevo() {
     //console.log(this.huevoForm.value);
+    if (this.huevoForm.valid) {
+      this.apiHuevos.postHuevo(this.huevoForm.value).subscribe({
+        next: (respuesta) => {
+          alert('Huevo guardado con exito');
+        },
+        error: () => {
+          alert('Ha habido un error guardando tu huevo');
+        },
+      });
+    }
   }
 }
