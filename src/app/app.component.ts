@@ -13,7 +13,9 @@ export class AppComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(HuevoDialogComponent, {});
+    const dialogRef = this.dialog.open(HuevoDialogComponent, {
+      width: '33vw',
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

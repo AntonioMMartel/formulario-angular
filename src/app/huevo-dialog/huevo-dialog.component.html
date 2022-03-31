@@ -1,1 +1,49 @@
-<p>huevo-dialog works!</p>
+<h1 mat-dialog-title>Añadir nuevo huevo</h1>
+<div mat-dialog-content>
+    <mat-hint>O tiene un nombre mono o te funaré en un post de reddit</mat-hint>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del futuro pollito</mat-label>
+        <input matInput placeholder="Chumpi">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Qué forma tiene el huevo?</mat-label>
+
+        <mat-select>
+            <mat-option value="Esfera"> Esfera </mat-option>
+            <mat-option value="Tetraedro"> Tetraedro </mat-option>
+            <mat-option value="Cilindro"> Cilindro </mat-option>
+            <mat-option value="Abstracto"> Abstracto </mat-option>
+            <mat-option value="Quásar"> Quásar </mat-option>
+            <mat-option value="Romboide"> Romboide </mat-option>
+            <mat-option value="Teseracto"> Teseracto </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Cuándo cayó el huevito?</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-label>
+        <h1>Como de gansta es el huevo?</h1>
+    </mat-label>
+    <mat-radio-group>
+        <mat-radio-button *ngFor="let gansta of ganstas" [value]="gansta">
+            {{ gansta }}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Volumen del bíceps del pollito (cm³)</mat-label>
+        <input matInput type="number" placeholder="Biceps">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Comentarios adicionales</mat-label>
+        <textarea autosize matInput></textarea>
+    </mat-form-field>
+
+</div>
