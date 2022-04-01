@@ -17,6 +17,15 @@
       "fechaHuevo": "2001-01-10T00:00:00.000Z",
       "comentariosHuevo": "ESTE SIIII",
       "id": 2
+    },
+    {
+      "nombreHuevo": "22222",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Ciudadano modelo",
+      "bicepsHuevo": 2222,
+      "fechaHuevo": "0222-01-09T01:01:36.000Z",
+      "comentariosHuevo": "hola",
+      "id": 3
     }
   ]
 }

@@ -14,7 +14,7 @@ export class AppComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(HuevoDialogComponent, {
-      width: '33vw',
+      width: '50vw',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
