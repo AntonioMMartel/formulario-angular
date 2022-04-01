@@ -17,6 +17,7 @@ export class TableHuevosComponent implements OnInit {
     'bicepsHuevo',
     'fechaHuevo',
     'comentariosHuevo',
+    'actions',
   ];
   dataSource!: MatTableDataSource<any>;
 
