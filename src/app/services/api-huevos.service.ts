@@ -19,9 +19,12 @@ export class ApiHuevosService {
     return this.http.post<any>(hostname, data);
   }
 
-  getHuevo() {
+  getAllHuevos() {
     let hostname =
-      document.location.protocol + '//' + document.location.hostname;
-    return this.http.get<any>(hostname + '/huevos/');
+      document.location.protocol +
+      '//' +
+      document.location.hostname +
+      ':3000/huevos';
+    return this.http.get<any>(hostname);
   }
 }

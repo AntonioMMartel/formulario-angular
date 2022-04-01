@@ -18,8 +18,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { AutosizeModule } from 'ngx-autosize';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { TableHuevosComponent } from './table-huevos/table-huevos.component';
 @NgModule({
-  declarations: [AppComponent, HuevoDialogComponent],
+  declarations: [AppComponent, HuevoDialogComponent, TableHuevosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
