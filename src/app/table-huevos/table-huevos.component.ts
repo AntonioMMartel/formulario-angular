@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { HuevoDialogComponent } from '../huevo-dialog/huevo-dialog.component';
 import { ApiHuevosService } from '../services/api-huevos.service';
 
 @Component({
@@ -24,7 +26,7 @@ export class TableHuevosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private huevoApi: ApiHuevosService) {}
+  constructor(private huevoApi: ApiHuevosService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getAllHuevos();
@@ -50,5 +52,12 @@ export class TableHuevosComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  editHuevo(row: any) {
+    this.dialog.open(HuevoDialogComponent, {
+      width: '50vw',
+      data: row,
+    });
   }
 }

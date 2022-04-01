@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiHuevosService } from '../services/api-huevos.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-huevo-dialog',
   templateUrl: './huevo-dialog.component.html',
   styleUrls: ['./huevo-dialog.component.sass'],
 })
 export class HuevoDialogComponent {
+  accion: String = 'Guardar';
   ganstas = [
     'Chimpancé de feria',
     'Mazo gansta nano',
@@ -23,7 +24,8 @@ export class HuevoDialogComponent {
   constructor(
     private FormBuilder: FormBuilder,
     private apiHuevos: ApiHuevosService,
-    private dialogRef: MatDialogRef<HuevoDialogComponent>
+    private dialogRef: MatDialogRef<HuevoDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public editHuevo: any
   ) {
     this.huevoForm = this.FormBuilder.group({
       nombreHuevo: ['', Validators.required],
@@ -36,22 +38,53 @@ export class HuevoDialogComponent {
   }
 
   ngOnInit(): void {
-    this.huevoForm;
+    if (this.editHuevo) {
+      this.accion = 'Editar';
+      this.huevoForm.controls['nombreHuevo'].setValue(
+        this.editHuevo.nombreHuevo
+      );
+      this.huevoForm.controls['formaHuevo'].setValue(this.editHuevo.formaHuevo);
+      this.huevoForm.controls['swagHuevo'].setValue(this.editHuevo.swagHuevo);
+      this.huevoForm.controls['bicepsHuevo'].setValue(
+        this.editHuevo.bicepsHuevo
+      );
+      this.huevoForm.controls['fechaHuevo'].setValue(this.editHuevo.fechaHuevo);
+      this.huevoForm.controls['comentariosHuevo'].setValue(
+        this.editHuevo.comentariosHuevo
+      );
+    }
   }
 
   guardaHuevo() {
-    //console.log(this.huevoForm.value);
-    if (this.huevoForm.valid) {
-      this.apiHuevos.postHuevo(this.huevoForm.value).subscribe({
-        next: (respuesta) => {
-          alert('Huevo guardado con exito');
-          this.huevoForm.reset();
-          this.dialogRef.close();
-        },
-        error: () => {
-          alert('Ha habido un error guardando tu huevo');
-        },
-      });
+    // Si no editamos:
+    if (!this.editHuevo) {
+      if (this.huevoForm.valid) {
+        //console.log(this.huevoForm.value);
+        this.apiHuevos.postHuevo(this.huevoForm.value).subscribe({
+          next: (respuesta) => {
+            alert('Huevo guardado con exito');
+            this.huevoForm.reset();
+            this.dialogRef.close();
+          },
+          error: () => {
+            alert('Ha habido un error guardando tu huevo');
+          },
+        });
+      }
+      // Si editamos:
+    } else {
+      this.apiHuevos
+        .updateHuevo(this.huevoForm.value, this.editHuevo.id)
+        .subscribe({
+          next: (res) => {
+            alert('Huevo modificado con éxito');
+            this.huevoForm.reset();
+            this.dialogRef.close('update');
+          },
+          error: (error) => {
+            alert('No se ha podido modificar el huevo');
+          },
+        });
     }
   }
 }

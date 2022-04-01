@@ -6,25 +6,27 @@ import { DOCUMENT } from '@angular/common';
   providedIn: 'root',
 })
 export class ApiHuevosService {
+  hostname =
+    document.location.protocol +
+    '//' +
+    document.location.hostname +
+    ':3000/huevos';
   constructor(private http: HttpClient) {}
 
   postHuevo(data: any) {
-    let hostname =
-      document.location.protocol +
-      '//' +
-      document.location.hostname +
-      ':3000/huevos';
-
     console.log();
-    return this.http.post<any>(hostname, data);
+    return this.http.post<any>(this.hostname, data);
   }
 
   getAllHuevos() {
-    let hostname =
-      document.location.protocol +
-      '//' +
-      document.location.hostname +
-      ':3000/huevos';
-    return this.http.get<any>(hostname);
+    return this.http.get<any>(this.hostname);
+  }
+
+  updateHuevo(data: any, id: number) {
+    return this.http.put<any>(this.hostname + '/' + id, data);
+  }
+
+  deleteHuevo(id: number) {
+    return this.http.delete<any>(this.hostname + '/' + id);
   }
 }

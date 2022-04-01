@@ -48,7 +48,7 @@
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Comentarios </th>
                 <td mat-cell *matCellDef="let row">
-                    <button mat-icon-button color="primary">
+                    <button mat-icon-button (click)="editHuevo(row)" color="primary">
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn">
