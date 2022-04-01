@@ -42,11 +42,8 @@ export class TableHuevosComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('SIUAHFUHADF');
-    console.log(this.updateTableOnDialogClose.toString());
     if (this.updateTableOnDialogClose == true) {
       this.updateTableOnDialogClose = false;
-      console.log('chiiii');
       this.getAllHuevos();
     }
   }
@@ -82,5 +79,19 @@ export class TableHuevosComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe((resultado) => {
       this.getAllHuevos();
     });
+  }
+
+  deleteHuevo(id: number) {
+    if (confirm('No volverás a ver a tu huevo nunca mas!! :(')) {
+      this.huevoApi.deleteHuevo(id).subscribe({
+        next: (res) => {
+          alert('Huevo eliminado com éxito');
+          this.getAllHuevos();
+        },
+        error: () => {
+          alert('Ha habido un error al eliminar el huevo');
+        },
+      });
+    }
   }
 }
