@@ -19,7 +19,7 @@
       "id": 2
     },
     {
-      "nombreHuevo": "22222",
+      "nombreHuevo": "2222233333",
       "formaHuevo": "Cilindro",
       "swagHuevo": "Ciudadano modelo",
       "bicepsHuevo": 2222,
@@ -28,13 +28,67 @@
       "id": 3
     },
     {
-      "nombreHuevo": "NADIE",
+      "nombreHuevo": "EEEEEEEEEAAA",
       "formaHuevo": "Cilindro",
       "swagHuevo": "Orgulloso alumno de la ulpgc",
       "bicepsHuevo": 222,
       "fechaHuevo": "2001-01-10T00:00:00.000Z",
       "comentariosHuevo": "ESTE SIIII",
       "id": 4
+    },
+    {
+      "nombreHuevo": "CCCCCC",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Fleje malote pa",
+      "bicepsHuevo": 222,
+      "fechaHuevo": "2022-04-07T23:00:00.000Z",
+      "comentariosHuevo": "gsfsdfsdfsdfsdf",
+      "id": 5
+    },
+    {
+      "nombreHuevo": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Ciudadano modelo",
+      "bicepsHuevo": 222312312312312320,
+      "fechaHuevo": "2022-04-21T23:00:00.000Z",
+      "comentariosHuevo": "fdsgdfgdfgdfgdfgdfg",
+      "id": 6
+    },
+    {
+      "nombreHuevo": "DDASDASDASDASD",
+      "formaHuevo": "Tetraedro",
+      "swagHuevo": "Persona genérica",
+      "bicepsHuevo": 223123,
+      "fechaHuevo": "2022-04-07T23:00:00.000Z",
+      "comentariosHuevo": "HOLAJAJJAJA",
+      "id": 7
+    },
+    {
+      "nombreHuevo": "111123123123123123123123213",
+      "formaHuevo": "Tetraedro",
+      "swagHuevo": "Fleje malote pa",
+      "bicepsHuevo": 909900909,
+      "fechaHuevo": "2022-04-21T23:00:00.000Z",
+      "comentariosHuevo": "kljhggjkkjfghjk",
+      "id": 8
+    },
+    {
+      "nombreHuevo": "holaaaaaa",
+      "formaHuevo": "Cilindro",
+      "swagHuevo": "Ciudadano modelo",
+      "bicepsHuevo": 7777,
+      "fechaHuevo": "2022-04-28T23:00:00.000Z",
+      "comentariosHuevo": "ñkihjlojhlijk",
+      "id": 9
+    },
+    {
+      "nombreHuevo": "4/6/2022",
+      "formaHuevo": "Tetraedro",
+      "swagHuevo": "Fleje malote pa",
+      "bicepsHuevo": 999,
+      "fechaHuevo": "2022-04-21T23:00:00.000Z",
+      "comentariosHuevo": "ñ-kj.lkj",
+      "id": 10
     }
   ]
 }

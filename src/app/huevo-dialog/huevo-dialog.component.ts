@@ -18,7 +18,6 @@ export class HuevoDialogComponent {
     'Orgulloso alumno de la ulpgc',
     'Yo (Persona extremadamente madura y empática)',
   ];
-
   huevoForm!: FormGroup;
 
   constructor(
@@ -64,7 +63,7 @@ export class HuevoDialogComponent {
           next: (respuesta) => {
             alert('Huevo guardado con exito');
             this.huevoForm.reset();
-            this.dialogRef.close();
+            this.dialogRef.close('save');
           },
           error: () => {
             alert('Ha habido un error guardando tu huevo');

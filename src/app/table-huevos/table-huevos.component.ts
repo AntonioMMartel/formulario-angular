@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -11,7 +18,9 @@ import { ApiHuevosService } from '../services/api-huevos.service';
   templateUrl: './table-huevos.component.html',
   styleUrls: ['./table-huevos.component.sass'],
 })
-export class TableHuevosComponent implements OnInit {
+export class TableHuevosComponent implements OnInit, OnChanges {
+  @Input() updateTableOnDialogClose!: boolean;
+
   displayedColumns: string[] = [
     'nombreHuevo',
     'formaHuevo',
@@ -30,6 +39,16 @@ export class TableHuevosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllHuevos();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('SIUAHFUHADF');
+    console.log(this.updateTableOnDialogClose.toString());
+    if (this.updateTableOnDialogClose == true) {
+      this.updateTableOnDialogClose = false;
+      console.log('chiiii');
+      this.getAllHuevos();
+    }
   }
 
   getAllHuevos() {
@@ -55,9 +74,13 @@ export class TableHuevosComponent implements OnInit {
   }
 
   editHuevo(row: any) {
-    this.dialog.open(HuevoDialogComponent, {
+    const dialogRef = this.dialog.open(HuevoDialogComponent, {
       width: '50vw',
       data: row,
+    });
+
+    dialogRef.afterClosed().subscribe((resultado) => {
+      this.getAllHuevos();
     });
   }
 }

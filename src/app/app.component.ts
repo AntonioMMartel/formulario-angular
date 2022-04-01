@@ -9,6 +9,7 @@ import { HuevoDialogComponent } from './huevo-dialog/huevo-dialog.component';
 })
 export class AppComponent {
   title = 'Huevos';
+  updateTableOnDialogClose: boolean = false;
 
   constructor(public dialog: MatDialog) {}
 
@@ -17,8 +18,11 @@ export class AppComponent {
       width: '50vw',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe((resultado) => {
+      console.log('buenass');
+      if (resultado === 'save' || resultado === 'update') {
+        this.updateTableOnDialogClose = true;
+      }
     });
   }
 }
