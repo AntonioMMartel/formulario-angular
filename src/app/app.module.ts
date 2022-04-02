@@ -22,7 +22,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TableHuevosComponent } from './table-huevos/table-huevos.component';
 import { MatSortModule } from '@angular/material/sort';
-import { AngularFireModule } from 'angularfire2';
 @NgModule({
   declarations: [AppComponent, HuevoDialogComponent, TableHuevosComponent],
   imports: [
@@ -46,7 +45,6 @@ import { AngularFireModule } from 'angularfire2';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    AngularFireModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
