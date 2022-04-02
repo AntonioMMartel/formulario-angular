@@ -10,7 +10,7 @@ export class ApiHuevosService {
     document.location.protocol +
     '//' +
     document.location.hostname +
-    ':3000/huevos';
+    '/api/huevos/';
   constructor(private http: HttpClient) {}
 
   postHuevo(data: any) {

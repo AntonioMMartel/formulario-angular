@@ -22,6 +22,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TableHuevosComponent } from './table-huevos/table-huevos.component';
 import { MatSortModule } from '@angular/material/sort';
+import {
+  HttpClientInMemoryWebApiModule,
+  InMemoryWebApiModule,
+} from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 @NgModule({
   declarations: [AppComponent, HuevoDialogComponent, TableHuevosComponent],
   imports: [
@@ -45,6 +50,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    InMemoryWebApiModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
