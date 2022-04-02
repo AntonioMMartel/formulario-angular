@@ -1,7 +1,7 @@
 <div class="contenedor">
 
     <mat-form-field appearance="standard">
-        <mat-label>Filtros</mat-label>
+        <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Chumpi" #input>
     </mat-form-field>
 
@@ -51,7 +51,7 @@
                     <button mat-icon-button (click)="editHuevo(row)" color="primary">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button (click)="deleteHuevo(row.id)" color="warn">
+                    <button mat-icon-button color="warn">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>
@@ -62,7 +62,7 @@
 
             <!-- Row shown when there is no matching data. -->
             <tr class="mat-row" *matNoDataRow>
-                <td class="mat-cell" colspan="4">No se ha encontrado ningún huevo :(</td>
+                <td class="mat-cell" colspan="4">No se han encontrado datos para el filtro "{{input.value}}"</td>
             </tr>
         </table>
 
