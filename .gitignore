@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Que no se vea firebase en git
+/src/environment/**
+
 # Compiled output
 /dist
 /tmp
